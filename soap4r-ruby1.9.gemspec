@@ -667,7 +667,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.6.2}
-  s.summary = %q{Ruby 1.9.2 compatible soap4r library}
+  s.summary = %q{Ruby 2.2 compatible soap4r library}
   s.test_files = [
     "test/16runner.rb",
     "test/interopR2/base.rb",
@@ -882,25 +882,8 @@ Gem::Specification.new do |s|
     "test/xsd/xsd2ruby/test_xsd2ruby.rb"
   ]
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
+  s.add_development_dependency(%q<shoulda>, [">= 0"])
+  s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
+  s.add_development_dependency(%q<rcov>, [">= 0"])
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
-    else
-      s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-      s.add_dependency(%q<rcov>, [">= 0"])
-    end
-  else
-    s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
-    s.add_dependency(%q<rcov>, [">= 0"])
-  end
 end
-
